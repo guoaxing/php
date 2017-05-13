@@ -28,10 +28,11 @@ $date=date('H:i,jS F Y');
 	define('SPARKPRICE', 4);
 	$totalamount=$tireqty*TIREPRICE+$oilqty*OILPRICE+$sparkqty*SPARKPRICE;
 	$totalamount=number_format($totalamount,2,".","");
-	echo "Total order is ".$totalamount;
-	echo "Address to ship is".$address;
-	$outputstring=$date."\t".$tireqty."tires\t"+$oilqty."oil\t".$sparkqty."spark plugs\t".$address."\n";
-	@$fp=fopen("E:/wamp64/www/orders.txt", 'ab');
+	echo "Total order is ".$totalamount."<br/>";
+	echo "Address to ship is".$address."<br/>";
+	$outputstring=$date."\t".$tireqty."tires\t".$oilqty."oil\t".$sparkqty."spark plugs\t".$totalqty."\t".$address."\n";
+	//echo $outputstring;
+	@$fp=fopen("E:/wamp64/www/php/orders.txt", 'ab');
 	flock($fp, LOCK_EX);
 	if(!$fp){
 		echo "<p>Please try agian later</p>";
