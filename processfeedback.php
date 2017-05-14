@@ -60,6 +60,20 @@ echo nl2br($mailcontent)."<br/>";
   echo strcmp($str1, $str2)."<br/>";
   echo strcasecmp($str1, $str2)."<br/>";
   echo strnatcmp($str1, $str2)."<br/>";
+  //test strstr()
+  $target="I believe i can fly";
+  echo strchr($target,"can")."<br/>";
+  //test strpos()
+ $target="Hello World";
+ echo strpos($target, "o")."<br/>";
+ echo strpos($target, "o",5)."<br/>";
+ echo strrpos($target, "o")."<br/>";
+ //test str_replace()
+ $target="Hello World";
+ echo str_replace("l", "a", $target)."<br/>";
+ //test substr_replace()
+ $target1="Hello World";
+ echo substr_replace($target1, "a", 3,7);
 ?>
 
 </body>
