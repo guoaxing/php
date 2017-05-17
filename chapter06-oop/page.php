@@ -5,8 +5,8 @@ class Page{
 	public $keywords="TLA Consulting,Three Letter Abbreviation,
 	some of my best friends are search engine";
 	public $buttons=array("Home"=>"home.php",
-						  "Contact"=>"contact.php"
-						  "Service"=>"service.php"
+						  "Contact"=>"contact.php",
+						  "Service"=>"service.php",
 						  "Site Map"=>"map.php");
 	public function __set($name,$value){
 		$this->$name=$value;
@@ -107,7 +107,7 @@ class Page{
 		if($active){
 			echo "<td width=\"".$width."%\">
 			<a href=\"".$url."\">
-			<img src=\"s-logo.jpg\" alt=\"".$name."\" border=\"0\" /></a>
+			<img src=\"s-logo.jpg\" alt=\"".$name."\" border=\"0\" width=50 height=50/></a>
 			<a href=\"".$url."\"><span class=\"menu\">".$name."</span></a>
 			</td>";
 		}else{
