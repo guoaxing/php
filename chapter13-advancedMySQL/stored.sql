@@ -35,7 +35,7 @@
 -- 	delimiter ;
 -- 	select add_tax1(20);
  delimiter //
- create procedure largest(out largest_id int)
+ create procedure thelargest_id(out largest_id int)
  	BEGIN
  	declare this_id int;
  	declare this_a float;
@@ -43,7 +43,7 @@
  	declare l_id int;
 
  	declare done int default 0;
- 	 	declare c1 cursor for select orderid,amount from orders;
+ 	declare c1 cursor for select orderid,amount from orders;
  	declare continue handler for sqlstate '02000' set done=1;
 
  	open c1;
@@ -63,5 +63,5 @@
  		 //
  		 delimiter ;
 
- 		 call largest(@l);
+ 		 call thelargest_id(@l);
  		 select @l;
